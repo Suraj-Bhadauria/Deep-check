@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Comparator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white flex flex-col justify-center items-center h-screen">
+    <canvas id="starfield" class="fixed top-0 left-0 w-screen h-screen overflow-hidden -z-10"></canvas>
+
+    <div class="bg-black/80 border border-gray-700 rounded-2xl h-[700px] w-[800px] flex flex-col items-center">
+        <h1 class="text-5xl font-extrabold mt-32">Image Comparator</h1>
+        <form method="POST" enctype="multipart/form-data" class="mt-12 space-y-7">
+            <label for="file1" class="text-xl font-bold">Upload Image 1:</label>
+            <input type="file" name="file1" id="file1" required placeholder="Image 1" class="ml-9 bg-gray-700 hover:border hover:border-gray-300 p-2 rounded-md focus:ring-2">
+            <br>
+            <label for="file2" class="text-xl font-bold">Upload Image 2:</label>
+            <input type="file" name="file2" id="file2" required placeholder="Image 2" class="ml-9 bg-gray-700 hover:border hover:border-gray-300 p-2 rounded-md focus:ring-2">
+            <br>
+            <button type="submit" class="h-16 w-44 ml-24 mt-72 hover:border rounded-full bg-gradient-to-r from-amber-400 to-amber-600 text-xl font-bold">Compare</button>
+        </form>
+
+        {% if filename1 and filename2 %}
+        <h2>Results</h2>
+        <div class="">
+            <h3>Image 1</h3>
+            <img src="{{ url_for('uploaded_file', filename=filename1) }}" alt="Image 1" width="300">
+            <p>Prediction: {{ prediction1 }}</p>
+            <p>Confidence: {{ confidence1 }}%</p>
+            <p>Metadata: {{ metadata1 }}</p>
+        </div>
+        <div>
+            <h3>Image 2</h3>
+            <img src="{{ url_for('uploaded_file', filename=filename2) }}" alt="Image 2" width="300">
+            <p>Prediction: {{ prediction2 }}</p>
+            <p>Confidence: {{ confidence2 }}%</p>
+            <p>Metadata: {{ metadata2 }}</p>
+        </div>
+        {% endif %}
+    </div>
+    <script src="../static/scripts/stars.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Detailed Report</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-black h-screen flex flex-col text-white justify-center items-center">
+  <!-- <canvas id="starfield" class="fixed top-0 left-0 w-screen h-screen overflow-hidden -z-10"></canvas> -->
+
+    <div class="p-12 mt-8 h-full w-[800px] bg-black  rounded-2xl ">
+        <ul>
+            {% for InfoMedel in get_users() %}
+            <h1 class="text-4xl font-extrabold text-center">Video Detailed Report</h1>
+            <br><br>
+            
+            <h2 class="text-2xl font-bold">1. General Information</h2>
+            <br>
+            <p><strong>Report ID:</strong> {{ metadata.get('Report ID', 'N/A') }}</p>
+            <p><strong>Date and Time:</strong> {{ metadata.get('Date and Time Created', 'N/A') }}</p>
+            <p><strong>Investigation Case ID: </strong>{{ InfoMedel.caseID }}</p>
+            <p><strong>Analyst Name: </strong>{{ InfoMedel.name }}</p>
+            <p><strong>Designation: </strong>{{ InfoMedel.designation }}</p>
+            <p><strong>Service Number: </strong>{{ InfoMedel.snum }}</p>
+            <p><strong>Organisation Name: </strong>{{ InfoMedel.org }}</p>
+            <br><br>
+        
+            <h2 class="text-2xl font-bold">2. Input File Details</h2>
+            <br>
+            <p><strong>File Name:</strong> {{ filename }}</p>
+            <p><strong>File Type:</strong> {{ metadata.get('File Format', 'N/A') }}</p>
+            <p><strong>File Size:</strong> {{ metadata.get('File Size', 'N/A') }}</p>
+            <p><strong>Resolution: </strong></p>
+            <p><strong>Video Duration:</strong> {{ metadata.get('Video Duration', 'N/A') }}</p>
+            <p><strong>Frame Rate: </strong></p>
+            <br><br>
+        
+            <h2 class="text-2xl font-bold">3. Deepfake Analysis Results</h2>
+            <br>
+            <p><strong>Prediction:</strong> {{ prediction }}</p>
+            <p><strong>Confidence Score: </strong> {{ confidence }}</p>
+            <p><strong>Number of Suspicious Frames: </strong></p>
+            <p><strong>Timestamps of Suspicious Frames: </strong></p>
+            <p><strong>Fake Frames:</strong> {{ fake_count }}</p>
+            <p><strong>Real Frames:</strong> {{ real_count }}</p>
+            <br><br>
+        
+            <h2 class="text-2xl font-bold">4. Metadata and Forensic Details</h2>
+            <br>
+            <p><strong>Hash Value (SHA-256):</strong> {{ metadata.get('Hash Value', 'N/A') }}</p>
+            <p><strong>EXIF Data: </strong></p>
+            <p><strong>Date Created: </strong> {{ metadata.get('Upload Time', 'N/A') }}</p>
+            <p><strong>Compression Artifacts: </strong></p>
+            <p><strong>Frame Manipulation Detection: </strong></p>
+            <br><br>
+        
+            <h2 class="text-2xl font-bold">5. Observations and Expert Remarks</h2>
+            <br>
+            <p><strong>Summary of Findings: </strong></p>
+            <p><strong>Confidence Level: </strong></p>
+            <p><strong>Suggested Next Steps: </strong></p>
+            <br><br>
+        
+            <h2 class="text-2xl font-bold">6. Conclusion and Signatures</h2>
+            <br>
+            <p><strong>Final Verdict: </strong></p>
+            <p><strong>Forensic Analyst Signature and Stamp: </strong></p>
+            {% endfor %}
+            </ul>
+        
+            <a href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+  <script src="../static/scripts/stars.js"></script>
+
+</body>
+</html>

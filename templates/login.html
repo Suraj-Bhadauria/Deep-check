@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-black h-screen flex flex-col justify-center items-center text-white">
+  <canvas id="starfield" class="fixed top-0 left-0 w-screen h-screen overflow-hidden -z-10"></canvas>
+
+<div class="border border-gray-800 rounded-2xl h-[600px] w-[800px] bg-black/80 flex flex-col  items-center">
+    <h1 class="text-4xl font-extrabold text-center mt-24 mb-20" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        LOGIN
+    </h1>
+    <form method="POST" class="space-y-9">
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username" required class="ml-2 bg-gray-700 hover:border hover:border-gray-300 p-2 rounded-md focus:ring-2" style="margin-top: 10px;">
+        <br>
+        <br>
+        <br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required class="ml-2 bg-gray-700 hover:border hover:border-gray-300 p-2 rounded-md focus:ring-2" style="margin-top: 10px;">
+        <br>
+        <button type="submit" class="mr-16 h-16 w-52 mt-8 flex justify-center items-center rounded-full font-bold bg-gradient-to-r from-pink-500  to-purple-800 hover:border text-xl">Login</button>
+    </form>
+</div>
+  <script src="../static/scripts/stars.js"></script>
+
+</body>
+</html>

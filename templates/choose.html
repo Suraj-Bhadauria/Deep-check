@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white flex flex-col justify-center items-center h-screen">
+  <canvas id="starfield" class="fixed top-0 left-0 w-screen h-screen overflow-hidden -z-10"></canvas>
+  <nav  class="pt-20 w-full flex border-b border-gray-700 h-40 bg-black/75 text-2xl text-white/75 justify-between items-center">
+    <div class="pl-6  hover:text-white/100 hover:filter hover:drop-shadow-[0_0_10px_white] hover:cursor-pointer ">
+      Deepcheck
+    </div>
+    
+  </nav>
+  <div class="mt-5 border h-auto w-[1000px] flex flex-col items-center bg-black/75 rounded-2xl border-gray-700">
+    
+    <!-- Title -->
+    <div class="w-full text-center">
+      <h1 class="text-6xl font-extrabold mt-14 border-b border-gray-700 pb-2">OUR TOOLS</h1>
+    </div>
+
+    <!-- Grid for Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 w-full place-items-center">
+      
+      <!-- Card 1 -->
+      <a href="{{ url_for('upload') }}" class="">
+          <button class="w-72 rounded-2xl overflow-hidden shadow-lg transform transition duration-300 hover:border hover:border-white">
+            <div class="h-40 bg-cover bg-center" style="background-image: url('../static/imagee.jpg');"></div>
+            <div class="bg-cyan-600 text-white text-center p-4">
+              <h3 class="text-lg font-bold">DeepCheck Image</h3>
+              <p class="text-sm opacity-90">It detects whether an image is altered by AI or not. It uses CNN model and display a confidence score.</p>
+            </div>
+          </button>
+        </a>
+
+      <!-- Card 2 -->
+      <a href="{{ url_for('videoupload') }}">
+          <button class="w-72 rounded-2xl overflow-hidden shadow-lg transform transition duration-300 hover:border hover:border-white">
+            <div class="h-40 bg-cover bg-center" style="background-image: url('../static/videoo.jpg');"></div>
+            <div class="bg-gray-500 text-white text-center p-4">
+              <h3 class="text-lg font-bold">DeepCheck Video</h3>
+              <p class="text-sm opacity-90">It detects whether a video is forged by AI or not. It display a confidence score based on frames analyzed by it. </p>
+            </div>
+          </button>
+        </a>
+
+      <!-- Card 3 -->
+       <a href="{{ url_for('comparator') }}">
+      <button class="w-72 rounded-2xl overflow-hidden shadow-lg transform transition duration-300 hover:border hover:border-white">
+        <div class="h-40 bg-cover bg-center" style="background-image: url('../static/comparatorr.jpg');"></div>
+        <div class="bg-amber-500 text-white text-center p-4">
+          <h3 class="text-lg font-bold">DeepCheck Comparator</h3>
+          <p class="text-sm opacity-90">This tool takes two look-alike images and detects which one is deepfake and which one is real.</p>
+        </div>
+      </button>
+       </a>
+
+      <!-- Centered Card in Next Row -->
+      <button class="w-72 rounded-2xl overflow-hidden shadow-lg transform transition duration-300 hover:border hover:border-white col-span-1 md:col-span-3 place-self-center">
+        <div class="h-40 bg-cover bg-center" style="background-image: url('../static/audioo.jpg');"></div>
+        <div class="bg-rose-500 text-white text-center p-4">
+          <h3 class="text-lg font-bold">DeepCheck Audio</h3>
+          <p class="text-sm opacity-90">It detects forgeries made in the audio files.</p>
+        </div>
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="../static/scripts/stars.js"></script>
+
+</body>
+</html>

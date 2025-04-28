@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white flex flex-col justify-center items-center h-screen">
+    <canvas id="starfield" class="fixed top-0 left-0 w-screen h-screen overflow-hidden -z-10"></canvas>
+    <div class="text-white flex flex-col justify-center items-center h-[500px] w-[1000px] bg-black/75 border border-gray-800 rounded-3xl p-8">
+        <h1 class="mt-4 mb-28 text-5xl font-bold ">Upload Your File</h1>
+    <!-- <p class="pt-4 pb-6 text-xl">Check your media.</p> -->
+        <form action="/test_vid" method="POST" enctype="multipart/form-data" class="flex flex-col justify-center items-center">
+            <label class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full block">
+                Choose Video File
+                <input type="file" name="video" accept="video/*" id="fileInput" required class="hidden">
+            </label>
+            <p id="fileName" class="mt-2 text-gray-300"></p>
+
+            <button type="submit" class="bg-pink-500 hover:bg-pink-600 rounded-full mt-6 px-6 py-3 text-lg font-semibold">Test Now</button>
+        </form>
+        
+    </div>
+    <!-- Disclaimer Modal -->
+  <div id="disclaimerModal" class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md text-center">
+      <h2 class="text-xl font-bold mb-2">⚠ Disclaimer</h2>
+      <p class="text-gray-700 mb-4">
+        🚨 Prohibited Content
+        <br>
+❌ Do not upload any of the following:
+
+Sensitive or personal information (e.g., government IDs, medical records, confidential documents).
+<br>
+Pornographic, explicit, or obscene media of any kind.
+Illegal or copyrighted material that you do not have the right to share.
+<br>
+Any content that violates ethical guidelines, legal regulations, or community standards.
+      </p>
+      <button id="closeModal" class="bg-blue-500 text-white px-4 py-2 rounded">
+        Okay, I understand
+      </button>
+    </div>
+  </div>
+    <script src="../static/scripts/stars.js"></script>
+    <script>
+        // Show selected file name
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+          let fileName = event.target.files[0]?.name || "No file selected";
+          document.getElementById('fileName').innerText = fileName;
+        });
+    
+        // Show Disclaimer Modal on Page Load
+        document.addEventListener("DOMContentLoaded", function() {
+          const modal = document.getElementById("disclaimerModal");
+          const closeModal = document.getElementById("closeModal");
+    
+          // Show modal
+          modal.classList.remove("hidden");
+    
+          // Close modal when button is clicked
+          closeModal.addEventListener("click", function() {
+            modal.classList.add("hidden");
+          });
+        });
+      </script>
+</body>
+</html>

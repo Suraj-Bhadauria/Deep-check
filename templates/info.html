@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black h-screen flex flex-col text-white justify-center items-center">
+    <canvas id="starfield" class="fixed top-0 left-0 w-screen h-screen overflow-hidden -z-10"></canvas>
+    <div class="border border-gray-800 rounded-2xl flex flex-col items-center h-[700px] w-[1000px] bg-black/75">
+        <h1 class="text-4xl font-bold mt-16">Case Investigator details</h1>
+        <h2 class="text-2xl font-bold mt-5">(to be filled in form)</h2>
+
+
+
+    <form class="mt space-y-9" method="POST">
+        <label for="name" class="text-xl font-bold">Full Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Enter Your full name" class="ml-14 bg-gray-700 hover:border hover:border-gray-300 p-2 rounded-md focus:ring-2">
+        <br>
+        <label for="designation" class="text-xl font-bold">Designation:</label>
+        <input type="text" id="designation" name="designation" required placeholder="Enter your designation" class="ml-9 bg-gray-700 hover:border hover:border-gray-300 p-2 rounded-md focus:ring-2">
+        <br>
+
+        <label for="caseID" class="text-xl font-bold">Investigation Case ID:</label>
+        <input type="text" id="caseID" name="caseID" required placeholder="Enter the Case ID" class="ml-9 bg-gray-700 hover:border hover:border-gray-300 p-2 rounded-md focus:ring-2">
+        <br>
+
+        <label for="org" class="text-xl font-bold">Organization:</label>
+        <input type="text" id="org" name="org" required placeholder="Enter your organization" class="ml-7 bg-gray-700 hover:border hover:border-gray-300 p-2 rounded-md focus:ring-2">
+        <br>
+        <label for="phone" class="text-xl font-bold">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="eg. +91 234-567-8901"
+            pattern="[+]{0,1}[0-9]{1,4}[ ]?[0-9]{3,}" required class="ml-2 bg-gray-700 hover:border hover:border-gray-300 p-2 rounded-md focus:ring-2">
+        <br>
+
+        <label for="snum" class="text-xl font-bold">Service Number:</label>
+        <input type="text" id="snum" name="snum" required placeholder="Enter service number" class="bg-gray-700 hover:border hover:border-gray-300 p-2 rounded-md focus:ring-2">
+        <br>
+        <button class="ml-16 mt-12 px-6 py-3 h-15 w-55 text-white text-xl font-bold rounded-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 ease-in-out hover:text-[21px] hover:drop-shadow-[0_0_15px_rgba(219,39,119,0.8)] hover:shadow-pink-500/50 hover:cursor-pointer">
+            Use DeepCheck
+        </button>
+    </form>
+    
+    </div>
+  <script src="../static/scripts/stars.js"></script>
+
+</body>
+
+</html>

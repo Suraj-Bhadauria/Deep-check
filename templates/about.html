@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="src/output.css" rel="stylesheet"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black h-screen flex flex-col items-center justify-center">
+    <canvas id="starfield" class="fixed top-0 left-0 w-screen h-screen overflow-hidden -z-10"></canvas> 
+    <nav  class="flex border-b-1  h-20 bg-black/75 text-2xl text-white/75 justify-between items-center" style="border-bottom: 1px solid rgb(31, 41, 55);">
+        <div class="pl-6  hover:text-white/100 hover:filter hover:drop-shadow-[0_0_10px_white] hover:cursor-pointer ">
+          Deepcheck
+        </div>
+        
+      </nav>
+    <div class="bg-black/75 h-[570px] w-[1000px] border-1 border-gray-800 text-white text-center flex flex-col justify-center pl-6 pr-6">
+        <p class="pt-4 text-2xl font-bold">ABOUT US</p>
+        <br />
+        <p>The proliferation of deepfakes, synthetic media generated using deep learning techniques such as Generative Adversarial Networks (GANs), poses significant ethical, legal, and security challenges. This paper presents a comprehensive approach to deepfake detection, leveraging advancements in computer vision and machine learning. State-of-the-art detection frameworks employ convolutional neural networks (CNNs), vision transformers (ViTs), and hybrid architectures to identify spatial and temporal anomalies, including irregular facial landmarks, unnatural head movements, mismatched lighting, and subtle artifacts introduced during synthesis. Temporal inconsistencies in videos, such as unnatural frame transitions and motion dynamics, are captured using recurrent neural networks (RNNs), long short-term memory (LSTM) models, and temporal convolutional networks (TCNs).</p>
+        <br />
+        <p>Additionally, frequency domain analysis has emerged as a robust technique to detect imperceptible GAN-generated artifacts. Multimodal approaches integrate visual, audio, and textual features to enhance the detection of complex manipulations, such as lip-syncing and voice synthesis. These methods are trained and evaluated on large-scale, publicly available datasets such as FaceForensics++, Celeb-DF, and the Deepfake Detection Challenge (DFDC), which provide diverse scenarios and high-quality deepfake samples.</p>
+        <br />
+        <p>Despite notable advancements, challenges such as generalization to unseen data, real-time detection scalability, and robustness against adversarial attacks remain unresolved. This research also highlights the importance of adversarial training, explainable AI (XAI) techniques for interpretability, and self-supervised learning for reducing dependency on large labeled datasets. By addressing these challenges, this paper contributes to developing robust, scalable, and generalizable deepfake detection systems to safeguard the integrity and authenticity of digital media in the face of increasingly sophisticated synthetic content.</p>
+    </div>
+    <script src="../static/scripts/stars.js"></script>
+
+</body>
+</html>

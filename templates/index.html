@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deepcheck - Deepfake Detection</title>
+  <!-- <link href="src/output.css" rel="stylesheet"> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black h-screen flex flex-col">
+  <!-- Canvas for animated stars background -->
+  <canvas id="starfield" class="fixed top-0 left-0 w-screen h-screen overflow-hidden -z-10"></canvas>
+  <nav  class="flex border-b-1  h-20 bg-black/75 text-2xl text-white/75 justify-between items-center" style="border-bottom: 1px solid rgb(31, 41, 55);">
+    <div class="pl-6  hover:text-white/100 hover:filter hover:drop-shadow-[0_0_10px_white] hover:cursor-pointer ">
+      Deepcheck
+    </div>
+    <div class="pl-30 hover:text-white/100 hover:filter hover:drop-shadow-[0_0_10px_white]">
+        <a href="{{ url_for('about') }}">About Us</a>
+    </div>
+    <div class="pr-24 hover:text-white/100 hover:filter hover:drop-shadow-[0_0_10px_white]">
+        <a href="{{ url_for('help') }}">Help</a>
+    </div>
+  </nav>
+  <div class="pt-[200px] flex flex-col items-center justify-center">
+    <h1 class="text-7xl text-white font-bold ">DeepCheck</h1>
+    <p class="pt-5 text-white text-2xl">Deepfake detection system.</p>
+    <!-- <a href="{{ url_for('upload') }}" class="pt-7">
+      <button class="px-4 py-2 h-15 w-55 text-white text-xl font-bold rounded-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 ease-in-out hover:text-[21px] hover:drop-shadow-[0_0_15px_rgba(219,39,119,0.8)] hover:shadow-pink-500/50 hover:cursor-pointer ">Use Deepcheck for Images</button>
+    </a>
+    <a href="{{ url_for('videoupload') }}">
+      <button class="px-4 py-2 h-15 w-55 text-white text-xl font-bold rounded-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 ease-in-out hover:text-[21px] hover:drop-shadow-[0_0_15px_rgba(219,39,119,0.8)] hover:shadow-pink-500/50 hover:cursor-pointer">Use Deepheck for Videos</button>
+    </a> -->
+    <br>
+    <br>
+    <a href="{{ url_for('login') }}">
+      <button class="px-4 py-2 h-15 w-55 text-white text-xl font-bold rounded-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 ease-in-out hover:text-[21px] hover:drop-shadow-[0_0_15px_rgba(219,39,119,0.8)] hover:shadow-pink-500/50 hover:cursor-pointer">Use DeepCheck</button>
+    </a>
+  </div>
+  
+
+  <script src="../static/scripts/stars.js"></script>
+</body>
+</html>
